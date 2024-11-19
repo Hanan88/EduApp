@@ -1,4 +1,5 @@
-import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import Button from '../../../components/ui/Button';
 
 export default function HomeScreen() {
 
@@ -37,7 +38,16 @@ export default function HomeScreen() {
                 source={require('../../../../assets/logo.png')}
             />
             <Text style={styles.text}>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</Text>
-            <Button title='GET STARTED' />
+            <Button
+                size='lg'
+                weight='bold'
+                color='white'
+                backgroundColor='blue'
+                borderRadius={10}
+                paddingHorizontal={30}
+                paddingVertical={10}
+                onPress={() => { }}
+            >GET STARTED</Button>
         </View>
     );
 }
