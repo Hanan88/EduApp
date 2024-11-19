@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import Button from '../../../components/ui/Button';
+import Text from '../../../components/ui/Text';
 
 export default function HomeScreen() {
 
@@ -32,12 +33,32 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>education app</Text>
+            <Text
+                size={40}
+                weight='bold'
+                color='black'
+                textAlign='center'
+                textTransform='uppercase'
+                marginHorizontal={0}
+                marginVertical={0}
+            >education app</Text>
             <Image
                 style={styles.logo}
                 source={require('../../../../assets/logo.png')}
             />
-            <Text style={styles.text}>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</Text>
+            <Text
+                size={16}
+                weight='normal'
+                color='black'
+                textAlign='center'
+                textTransform='none'
+                marginHorizontal={0}
+                marginVertical={0}
+            >
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type
+            </Text>
+
             <Button
                 size={25}
                 weight='bold'
