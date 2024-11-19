@@ -1,38 +1,20 @@
-import { View, StyleSheet, Image } from 'react-native';
 import Button from '../../../components/ui/Button';
+import Image from '../../../components/ui/Image';
 import Text from '../../../components/ui/Text';
+import VStack from '../../../components/ui/VStack';
 
 export default function HomeScreen() {
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingHorizontal: 30,
-            gap: 50,
-        },
-        title: {
-            fontSize: 40,
-            textTransform: 'uppercase',
-            fontWeight: 'bold',
-            color: '#333',
-            textAlign: 'center',
-        },
-        logo: {
-            width: 200,
-            height: 200,
-            resizeMode: 'contain',
-        },
-        text: {
-            textAlign: 'center',
-        }
-
-    });
-
     return (
-        <View style={styles.container}>
+        <VStack flex={1}
+            flexDirection='column'
+            alignItems='center'
+            justifyContent='center'
+            paddingHorizontal={30}
+            paddingVertical={0}
+            marginHorizontal={0}
+            marginVertical={0}
+            gap={50}>
             <Text
                 size={40}
                 weight='bold'
@@ -42,10 +24,14 @@ export default function HomeScreen() {
                 marginHorizontal={0}
                 marginVertical={0}
             >education app</Text>
+
             <Image
-                style={styles.logo}
+                width={200}
+                height={200}
+                resizeMode='contain'
                 source={require('../../../../assets/logo.png')}
             />
+
             <Text
                 size={16}
                 weight='normal'
@@ -69,6 +55,6 @@ export default function HomeScreen() {
                 paddingVertical={10}
                 onPress={() => { }}
             >GET STARTED</Button>
-        </View>
+        </VStack>
     );
 }

@@ -5,7 +5,7 @@ import { TextWeight } from '../../types/TextWeight';
 import { TextTransform } from '../../types/TextTransform';
 import { TextAlign } from '../../types/textAlign';
 
-type ButtonProps = {
+type TextProps = {
     children: string;
     size: TextSize;
     weight: TextWeight;
@@ -16,7 +16,7 @@ type ButtonProps = {
     marginVertical: number;
 };
 
-export default function Text({ children, size, weight, color, textAlign, textTransform, marginHorizontal, marginVertical }: ButtonProps): JSX.Element {
+export default function Text({ children, size, weight, color, textAlign, textTransform, marginHorizontal, marginVertical }: TextProps): JSX.Element {
 
     const styles = StyleSheet.create({
         text: {

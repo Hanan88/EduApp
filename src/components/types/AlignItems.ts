@@ -1,0 +1,1 @@
+export type AlignItems = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
