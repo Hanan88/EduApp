@@ -1,11 +1,14 @@
 import { Pressable, Text, View, StyleSheet } from 'react-native';
+import { TextSize } from '../../types/TextSize';
+import { Color } from '../../types/Color';
+import { TextWeight } from '../../types/TextWeight';
 
 type ButtonProps = {
     children: string;
-    size: 'sm' | 'md' | 'lg';
-    weight: 'normal' | 'semibold' | 'bold';
-    color: 'red' | 'blue' | 'green' | 'black' | 'white';
-    backgroundColor: 'red' | 'blue' | 'green' | 'black' | 'white';
+    size: TextSize;
+    weight: TextWeight;
+    color: Color;
+    backgroundColor: Color;
     borderRadius: number;
     paddingHorizontal: number;
     paddingVertical: number;
@@ -16,7 +19,7 @@ export default function Button({ children, size, weight, color, backgroundColor,
 
     const styles = StyleSheet.create({
         text: {
-            fontSize: size === 'sm' ? 14 : size === 'md' ? 16 : 30,
+            fontSize: size,
             color,
             fontWeight: weight,
         },

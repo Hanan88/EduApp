@@ -1,0 +1,1 @@
+export type TextWeight = 'normal' | 'semibold' | 'bold';
