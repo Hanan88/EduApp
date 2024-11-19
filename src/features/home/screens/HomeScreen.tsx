@@ -54,7 +54,8 @@ export default function HomeScreen() {
                 paddingHorizontal={30}
                 paddingVertical={10}
                 onPress={() => { }}
-            >GET STARTED</Button>
+                text='GET STARTED'
+            />
         </VStack>
     );
 }

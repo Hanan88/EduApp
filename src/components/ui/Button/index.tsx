@@ -4,7 +4,7 @@ import { Color } from '../../types/Color';
 import { TextWeight } from '../../types/TextWeight';
 
 type ButtonProps = {
-    children: string;
+    text: string;
     size: TextSize;
     weight: TextWeight;
     color: Color;
@@ -15,7 +15,7 @@ type ButtonProps = {
     onPress: () => void;
 };
 
-export default function Button({ children, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, onPress }: ButtonProps): JSX.Element {
+export default function Button({text, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, onPress }: ButtonProps): JSX.Element {
 
     const styles = StyleSheet.create({
         text: {
@@ -35,7 +35,7 @@ export default function Button({ children, size, weight, color, backgroundColor,
         <Pressable onPress={onPress}>
             <View style={styles.button}>
                 <Text style={styles.text}>
-                    {children}
+                    {text}
                 </Text>
             </View>
         </Pressable>
