@@ -4,7 +4,9 @@ import Text from '../../../components/ui/Text';
 import VStack from '../../../components/ui/VStack';
 
 export default function HomeScreen({ navigation }: { navigation: any }) {
-
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
         <VStack flex={1} paddingHorizontal={30} gap={50}>
             <Text
@@ -45,7 +47,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
                 borderRadius={10}
                 paddingHorizontal={30}
                 paddingVertical={10}
-                onPress={() => { navigation.navigate('Login') }}
+                onPress={() => { navigation.navigate('Auth')}}
                 text='GET STARTED'
             />
         </VStack>

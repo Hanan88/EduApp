@@ -11,7 +11,9 @@ type VStackProps = {
 };
 
 export default function VStack({ children, flex, paddingHorizontal, paddingVertical, marginHorizontal, marginVertical, gap }: VStackProps): JSX.Element {
-
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: States & Constants
+    // ----------------------------------------------------------------------------------------------------
     const styles = StyleSheet.create({
         vStack: {
             flex,
@@ -26,6 +28,9 @@ export default function VStack({ children, flex, paddingHorizontal, paddingVerti
         },
     });
 
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
         <View style={styles.vStack}>
             {children}

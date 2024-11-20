@@ -8,7 +8,9 @@ type ImageProps = {
 };
 
 export default function Image({ width, height, resizeMode, source }: ImageProps): JSX.Element {
-
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: States & Constants
+    // ----------------------------------------------------------------------------------------------------
     const styles = StyleSheet.create({
         image: {
             width,
@@ -16,6 +18,10 @@ export default function Image({ width, height, resizeMode, source }: ImageProps)
             resizeMode,
         },
     });
+
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
         <RNImage style={styles.image} source={source} />
     );

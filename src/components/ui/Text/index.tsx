@@ -17,7 +17,9 @@ type TextProps = {
 };
 
 export default function Text({ children, size, weight, color, textAlign, textTransform, marginHorizontal, marginVertical }: TextProps): JSX.Element {
-
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: States & Constants
+    // ----------------------------------------------------------------------------------------------------
     const styles = StyleSheet.create({
         text: {
             fontSize: size,
@@ -30,6 +32,9 @@ export default function Text({ children, size, weight, color, textAlign, textTra
         },
     });
 
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
         <RNText style={styles.text}>
             {children}

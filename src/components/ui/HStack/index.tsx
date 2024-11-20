@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 
 type VStackProps = {
     children: string | JSX.Element | JSX.Element[];
@@ -8,10 +8,13 @@ type VStackProps = {
     marginHorizontal?: number;
     marginVertical?: number;
     gap?: number;
+    style?: StyleProp<ViewStyle>
 };
 
-export default function HStack({ children, flex, paddingHorizontal, paddingVertical, marginHorizontal, marginVertical, gap }: VStackProps): JSX.Element {
-
+export default function HStack({ children, flex, paddingHorizontal, paddingVertical, marginHorizontal, marginVertical, gap, style }: VStackProps): JSX.Element {
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: States & Constants
+    // ----------------------------------------------------------------------------------------------------
     const styles = StyleSheet.create({
         vStack: {
             flex,
@@ -26,8 +29,11 @@ export default function HStack({ children, flex, paddingHorizontal, paddingVerti
         },
     });
 
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
-        <View style={styles.vStack}>
+        <View style={[styles.vStack, style]}>
             {children}
         </View>
     );
