@@ -3,7 +3,7 @@ import Image from '../../../components/ui/Image';
 import Text from '../../../components/ui/Text';
 import VStack from '../../../components/ui/VStack';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }: { navigation: any }) {
 
     return (
         <VStack flex={1}
@@ -53,7 +53,7 @@ export default function HomeScreen() {
                 borderRadius={10}
                 paddingHorizontal={30}
                 paddingVertical={10}
-                onPress={() => { }}
+                onPress={() => { navigation.navigate('Login')}}
                 text='GET STARTED'
             />
         </VStack>
