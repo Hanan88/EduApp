@@ -7,15 +7,7 @@ import VStack from '../../../components/ui/VStack';
 export default function LoginScreen() {
 
     return (
-        <VStack flex={1}
-            flexDirection='column'
-            alignItems='center'
-            justifyContent='center'
-            paddingHorizontal={30}
-            paddingVertical={0}
-            marginHorizontal={0}
-            marginVertical={0}
-            gap={50}>
+        <VStack flex={1} paddingHorizontal={30} gap={50}>
 
             <TextInput
                 placeholder='Email'

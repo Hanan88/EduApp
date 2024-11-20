@@ -6,15 +6,7 @@ import VStack from '../../../components/ui/VStack';
 export default function HomeScreen({ navigation }: { navigation: any }) {
 
     return (
-        <VStack flex={1}
-            flexDirection='column'
-            alignItems='center'
-            justifyContent='center'
-            paddingHorizontal={30}
-            paddingVertical={0}
-            marginHorizontal={0}
-            marginVertical={0}
-            gap={50}>
+        <VStack flex={1} paddingHorizontal={30} gap={50}>
             <Text
                 size={40}
                 weight='bold'
@@ -53,7 +45,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
                 borderRadius={10}
                 paddingHorizontal={30}
                 paddingVertical={10}
-                onPress={() => { navigation.navigate('Login')}}
+                onPress={() => { navigation.navigate('Login') }}
                 text='GET STARTED'
             />
         </VStack>

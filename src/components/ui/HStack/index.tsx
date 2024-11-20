@@ -10,12 +10,12 @@ type VStackProps = {
     gap?: number;
 };
 
-export default function VStack({ children, flex, paddingHorizontal, paddingVertical, marginHorizontal, marginVertical, gap }: VStackProps): JSX.Element {
+export default function HStack({ children, flex, paddingHorizontal, paddingVertical, marginHorizontal, marginVertical, gap }: VStackProps): JSX.Element {
 
     const styles = StyleSheet.create({
         vStack: {
             flex,
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
             paddingHorizontal,
