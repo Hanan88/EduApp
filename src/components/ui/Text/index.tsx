@@ -11,9 +11,9 @@ type TextProps = {
     weight: TextWeight;
     color: Color;
     textAlign: TextAlign;
-    textTransform: TextTransform;
-    marginHorizontal: number;
-    marginVertical: number;
+    textTransform?: TextTransform;
+    marginHorizontal?: number;
+    marginVertical?: number;
 };
 
 export default function Text({ children, size, weight, color, textAlign, textTransform, marginHorizontal, marginVertical }: TextProps): JSX.Element {

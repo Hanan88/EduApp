@@ -3,7 +3,7 @@ import Button from '../../../components/ui/Button';
 import VStack from '../../../components/ui/VStack';
 import { StyleSheet } from 'react-native';
 
-export default function Login() {
+export default function Login({ navigation }: { navigation: any }) {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ export default function Login() {
                 borderRadius={6}
                 paddingHorizontal={40}
                 paddingVertical={10}
-                onPress={() => { }}
+                onPress={() => { navigation.navigate('Profile') }}
                 text='LOGIN'
             />
         </VStack>

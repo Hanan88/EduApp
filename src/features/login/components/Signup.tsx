@@ -3,7 +3,7 @@ import Button from '../../../components/ui/Button';
 import VStack from '../../../components/ui/VStack';
 import { StyleSheet } from 'react-native';
 
-export default function Signup() {
+export default function Signup({ navigation }: { navigation: any }) {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ export default function Signup() {
                 borderRadius={6}
                 paddingHorizontal={40}
                 paddingVertical={10}
-                onPress={() => { }}
+                onPress={() => {navigation.navigate('Otp') }}
                 text='SIGNUP'
             />
         </VStack>

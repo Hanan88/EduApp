@@ -1,7 +1,8 @@
-import { Pressable, Text, View, StyleSheet } from 'react-native';
+import { Pressable, Text, View, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import { TextSize } from '../../types/TextSize';
 import { Color } from '../../types/Color';
 import { TextWeight } from '../../types/TextWeight';
+import { TextAlign } from '../../types/textAlign';
 
 type ButtonProps = {
     text: string;
@@ -12,10 +13,12 @@ type ButtonProps = {
     borderRadius?: number;
     paddingHorizontal?: number;
     paddingVertical?: number;
+    borderBottom?: boolean;
+    style?: StyleProp<ViewStyle>
     onPress: () => void;
 };
 
-export default function Button({ text, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, onPress }: ButtonProps): JSX.Element {
+export default function Button({ style, text, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, borderBottom, onPress }: ButtonProps): JSX.Element {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -30,16 +33,18 @@ export default function Button({ text, size, weight, color, backgroundColor, bor
             borderRadius,
             paddingHorizontal,
             paddingVertical,
+            borderBottomWidth: borderBottom ? 2 : 0,
+            borderBottomColor: borderBottom ? color : 'transparent',
         },
     });
-    
+
     // ----------------------------------------------------------------------------------------------------
     // MARK: Main Component UI
     // ----------------------------------------------------------------------------------------------------
     return (
         <Pressable onPress={onPress}>
-            <View style={styles.button}>
-                <Text style={styles.text}>
+            <View style={[styles.button, style]}>
+                <Text style={[styles.text, style]}>
                     {text}
                 </Text>
             </View>

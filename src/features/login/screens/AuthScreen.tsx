@@ -6,7 +6,7 @@ import Login from '../components/Login';
 import { useState } from 'react';
 import Signup from '../components/Signup';
 
-export default function AuthScreen() {
+export default function AuthScreen({ navigation }: { navigation: any }) {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -37,26 +37,26 @@ export default function AuthScreen() {
                     size={20}
                     weight='normal'
                     color='white'
-                    borderRadius={10}
                     paddingHorizontal={30}
                     paddingVertical={10}
                     onPress={() => { setIsLogin(false) }}
                     text='SIGNUP'
+                    borderBottom={!isLogin}
                 />
                 <Button
                     size={20}
                     weight='normal'
                     color='white'
-                    borderRadius={10}
                     paddingHorizontal={30}
                     paddingVertical={10}
                     onPress={() => { setIsLogin(true) }}
                     text='LOGIN'
+                    borderBottom={isLogin}
                 />
             </HStack>
 
             <View style={styles.authView}>
-                {isLogin ? <Login /> : <Signup />}
+                {isLogin ? <Login navigation={navigation} /> : <Signup navigation={navigation} />}
             </View>
         </VStack>
     );
