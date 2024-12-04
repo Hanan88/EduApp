@@ -32,12 +32,12 @@ export default function AuthScreen({ navigation }: { navigation: any }) {
     // ----------------------------------------------------------------------------------------------------
     return (
         <VStack flex={1}>
-            <HStack flex={1} gap={10} style={styles.hStack}>
+            <HStack flex={1} gap={5} style={styles.hStack}>
                 <Button
                     size={20}
                     weight='normal'
                     color='white'
-                    paddingHorizontal={30}
+                    paddingHorizontal={25}
                     paddingVertical={10}
                     onPress={() => { setIsLogin(false) }}
                     text='SIGNUP'
@@ -47,7 +47,7 @@ export default function AuthScreen({ navigation }: { navigation: any }) {
                     size={20}
                     weight='normal'
                     color='white'
-                    paddingHorizontal={30}
+                    paddingHorizontal={25}
                     paddingVertical={10}
                     onPress={() => { setIsLogin(true) }}
                     text='LOGIN'

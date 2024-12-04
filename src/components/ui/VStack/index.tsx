@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+import { Color } from '../../types/Color';
 
 type VStackProps = {
     children: string | JSX.Element | JSX.Element[];

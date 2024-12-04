@@ -2,7 +2,6 @@ import { Pressable, Text, View, StyleSheet, ViewStyle, StyleProp } from 'react-n
 import { TextSize } from '../../types/TextSize';
 import { Color } from '../../types/Color';
 import { TextWeight } from '../../types/TextWeight';
-import { TextAlign } from '../../types/textAlign';
 
 type ButtonProps = {
     text: string;
@@ -14,11 +13,13 @@ type ButtonProps = {
     paddingHorizontal?: number;
     paddingVertical?: number;
     borderBottom?: boolean;
+    shadowColor?: Color;
+    elevation?: number;
     style?: StyleProp<ViewStyle>
     onPress: () => void;
 };
 
-export default function Button({ style, text, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, borderBottom, onPress }: ButtonProps): JSX.Element {
+export default function Button({ style, text, size, weight, color, backgroundColor, borderRadius, paddingHorizontal, paddingVertical, borderBottom, shadowColor, elevation, onPress }: ButtonProps): JSX.Element {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -27,6 +28,7 @@ export default function Button({ style, text, size, weight, color, backgroundCol
             fontSize: size,
             color,
             fontWeight: weight,
+            textAlign: 'center',
         },
         button: {
             backgroundColor,
@@ -35,6 +37,8 @@ export default function Button({ style, text, size, weight, color, backgroundCol
             paddingVertical,
             borderBottomWidth: borderBottom ? 2 : 0,
             borderBottomColor: borderBottom ? color : 'transparent',
+            shadowColor,
+            elevation,
         },
     });
 
