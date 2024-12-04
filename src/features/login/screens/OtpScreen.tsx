@@ -1,14 +1,19 @@
-import { View, TextInput, StyleSheet } from "react-native"; // Added TextInput import
-import { useState } from "react"; // Added useState import
+import { View, TextInput, StyleSheet, Alert } from "react-native";
+import { useRef, useState } from "react";
 import Text from "../../../components/ui/Text";
 import HStack from "../../../components/ui/HStack";
-import Button from "../../../components/ui/Button";
 import { NavigationProp } from "@react-navigation/native";
-import { TextAlign } from '../../../components/types/textAlign';
 
 export default function OtpScreen({ navigation }: { navigation: NavigationProp<any> }) {
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: States & Constants
+    // ----------------------------------------------------------------------------------------------------
     const [otp, setOtp] = useState(Array(6).fill(""));
+    const inputRefs = useRef<(TextInput | null)[]>(Array(6).fill(null));
 
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Styles
+    // ----------------------------------------------------------------------------------------------------
     const styles = StyleSheet.create({
         input: {
             borderWidth: 1,
@@ -22,6 +27,25 @@ export default function OtpScreen({ navigation }: { navigation: NavigationProp<a
         },
     });
 
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Functions
+    // ----------------------------------------------------------------------------------------------------
+    function handleOTP(text: string, index: number) {
+        const newOtp = [...otp];
+        newOtp[index] = text;
+        setOtp(newOtp);
+
+        if (text && index < otp.length - 1) {
+            inputRefs.current[index + 1]?.focus();
+        } else if (index === otp.length - 1) {
+            Alert.alert("Success", "OTP entered successfully!");
+            navigation.navigate('Profile');
+        }
+    }
+
+    // ----------------------------------------------------------------------------------------------------
+    // MARK: Main Component UI
+    // ----------------------------------------------------------------------------------------------------
     return (
         <View>
             <Text size={30} weight='bold' color='black' textAlign='center' textTransform='none' marginVertical={20}>
@@ -36,11 +60,8 @@ export default function OtpScreen({ navigation }: { navigation: NavigationProp<a
                         maxLength={1}
                         style={styles.input}
                         value={value}
-                        onChangeText={(text) => {
-                            const newOtp = [...otp];
-                            newOtp[index] = text;
-                            setOtp(newOtp);
-                        }}
+                        ref={(ref) => (inputRefs.current[index] = ref)}
+                        onChangeText={(text) => { handleOTP(text, index) }}
                     />
                 ))}
             </HStack>
@@ -48,6 +69,7 @@ export default function OtpScreen({ navigation }: { navigation: NavigationProp<a
             <Text size={14} weight='normal' color='black' textAlign='center' textTransform='none' marginVertical={20}>
                 1:00 minutes
             </Text>
+
         </View>
     );
 }
